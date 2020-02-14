@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 This code is meant to help people who are wondering if their symptoms are being caused by allergies or by a cold
  
 Known Issues:
-blah, blah, blah, blah
+Resultspage function is haveing trouble displaying the results. 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -33,30 +33,25 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-
-<script>
+<!--These vars are the numbers that will be manipulated by the questions-->
+<script> 
         var allergy_count = 0;
         var cold_count = 0;
 
-function calculate(){
-	allergyPercentage();
-	allergyPercentage();
-	coldPercentage();
-	var resultText=document.getElementBYId("resultscontent");
-	}
-function allergyAdd(){
+	
+function allergyAdd(){<!--This function adds 1 to the allergycount for every answer-->
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
    }
 
-        function coldAdd(){
+        function coldAdd(){<!--This function adds 1 to the coldcount for every answer-->
             cold_count = cold_count + 1;
         }
-function calculateTotal(){
+function calculateTotal(){<!--This function calculates the probability of allergy and the probability of a cold using the variables-->
 	allergyPercentage=allergy_count/(allergy_count + cold_count) * 100;
 	coldPercentage = cold_count/(allergy_count + cold_count) * 100;
 }
-function resultspage(){
+function resultspage(){<!--This is the function I tried to pull at the results page to display results-->
 	var resultText = document.getElementByID("results");
 	resultText.innerHTML = "Probability it is allergies =" + allergyPercentage +"<br> Probability it is a cold =" +coldPercentage;
 
@@ -64,7 +59,7 @@ function resultspage(){
 
 
 
-<style>	
+<style>	<!--this is the details for page dimensions and layout-->
 .body {
      margin: 0em;
 }
@@ -86,12 +81,12 @@ function resultspage(){
 }
 </style>
 
-<body>
+<body><!--this creates the orange header for the page with the title of the page-->
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
 
-<div id="content" class="w3-container">
+<div id="content" class="w3-container"> <!--This creates the container for text in this page the lines below are the text that is displayed-->
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
@@ -100,67 +95,67 @@ function resultspage(){
 
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-<div class="page" id="one">
+<div class="page" id="one"><!--this creates the orange header for the page with the title of the page-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question #1</h1>
 	</div>
 
-    	<div id="content" class="w3-container">
+    	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
         <p> Are your eyes watery or itchy?.</p>
-	<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-green w3-round"> Yes </a>
+	<a href="#two" onclick="AllergyAdd();" class="w3-btn w3-green w3-round"> Yes </a> <!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 	<a href="#two" onclick="ColdAdd();" class="w3-btn w3-red w3-round"> No </a>
     	</div>
 </div>
 
-<div class="page" id="two">
+<div class="page" id="two"><!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question #2</h1>
 	</div>
 
-	<div id="content" class="w3-container">
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
 	<p>Do you have a fever?</p>
-	<a href="#three" onclick="ColdAdd();" class="w3-btn w3-green w3-round"> Yes </a>
+	<a href="#three" onclick="ColdAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 	<a href="#three" onclick="AllergyAdd();" class="w3-btn w3-red w3-round"> No </a>
 	</div>
 </div>	
-	<div class="page" id="three">
+	<div class="page" id="three"><!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question #3</h1>
 		</div>
 	
 	<div id="content" class="w3-container">
 	<p>Do you have a sore throat?</p>
-	<a href="#four" onclick="ColdAdd();" class="w3-btn w3-green w3-round"> Yes </a>
+	<a href="#four" onclick="ColdAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 	<a href="#four" onclick="AllergyAdd();" class="w3-btn w3-red w3-round"> No </a>
 </div>
-	<div class="page" id="four">
+	<div class="page" id="four"><!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question #4</h1>
 	</div>
-	<div id="content" class="w3-container">
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
 	<p>Are your symptoms seosonal or chronic?</p>
-	<a href="#five" onclick="AllergyAdd();" class="w3-btn w3-green w3-round"> Yes </a>
+	<a href="#five" onclick="AllergyAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 	<a href="#five" onclick="ColdAdd();" class="w3-btn w3-red w3-round"> No </a>
 </div>
-	<div class="page" id="five">
+	<div class="page" id="five"><!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question #5</h1>
 	</div>
-	<div id="content" class="w3-container">
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
 	<p>Does pollen or dust make your symptoms worse?</p>
-	<a href="#six" onclick="AllergyAdd();" class="w3-btn w3-green w3-round"> Yes </a>
+	<a href="#six" onclick="AllergyAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 	<a href="#six" onclick="ColdAdd();" class="w3-btn w3-red w3-round"> No </a>
 </div>
-	<div class="page" id="six">
+	<div class="page" id="six"><!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question #6</h1>
 	</div>
-	<div id="content" class="w3-container">
+	<div id="content" class="w3-container"><!--This creates the container for text in this page the lines below are the text that is displayed-->
 	<p>Have you been in contact with sick people over the past week?</p>
-	<a href="#seven" onclick="ColdAdd();" class="w3-btn w3-green w3-round"> Yes </a>
+	<a href="#seven" onclick="ColdAdd();" class="w3-btn w3-green w3-round"> Yes </a><!--The next two lines are the buttons, they call the allergyadd or coldadd function as well as moving you to the next page-->
 	<a href="#seven" onclick="AllergyAdd();" class="w3-btn w3-red w3-round"> No </a>
 </div>
-	<div class="page" id="seven">	
+	<div class="page" id="seven">	<!--this creates the orange header for the page with the title of the page-->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results Processing</h1>
 	</div>
@@ -168,14 +163,14 @@ function resultspage(){
 	<div id="content" calss="w3-container">
 	<a href="#eight" onclick="ColdAdd();" class="w3-btn w3-grey w3-round"> Click here to view results </a>
 		</div>
-<div class="page" id="eight">
+<div class="page" id="eight"><!--this creates the orange header for the page with the title of the page-->
 	<div id="header" class="w3-container w3-flat carrot">
 		<h1>Results<h1>
 	</div>
 	<div id="content" class="w3 container">
-		<a onclick="resultspage();" class w3-btn w3-black"> Click here for results</a>
+		<a onclick="resultspage();" class w3-btn w3-black"> Click here for results</a>;<!--this button calls the resultspage function which displays the results-->
 </div>			
-<footer class="w3-bottom w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-carrot"><!--this creates the orange footer on every page-->
 	<p>DIY!</p>
 </footer>
 
