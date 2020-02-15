@@ -40,16 +40,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	
 function allergyAdd(){<!--This function adds 1 to the allergycount for every answer-->
-            allergy_count = allergy_count + 1;
+           var allergy_count = allergy_count + 1;
 		alert(allergy_count);
    }
 
         function coldAdd(){<!--This function adds 1 to the coldcount for every answer-->
-            cold_count = cold_count + 1;
+            var cold_count = cold_count + 1;
         }
 function calculateTotal(){<!--This function calculates the probability of allergy and the probability of a cold using the variables-->
-	allergyPercentage=allergy_count/(allergy_count + cold_count) * 100;
-	coldPercentage = cold_count/(allergy_count + cold_count) * 100;
+	var allergyPercentage = allergy_count/(allergy_count + cold_count) * 100;
+	var coldPercentage = cold_count/(allergy_count + cold_count) * 100;
 }
 function resultspage(){<!--This is the function I tried to pull at the results page to display results-->
 	var resultText = document.getElementByID("results");
@@ -161,7 +161,7 @@ function resultspage(){<!--This is the function I tried to pull at the results p
 	</div>
 		
 	<div id="content" calss="w3-container">
-	<a href="#eight" onclick="ColdAdd();" class="w3-btn w3-grey w3-round"> Click here to view results </a>
+	<a href="#eight" onclick="calculateTotal();" class="w3-btn w3-grey w3-round"> Click here to view results </a>
 		</div>
 <div class="page" id="eight"><!--this creates the orange header for the page with the title of the page-->
 	<div id="header" class="w3-container w3-flat carrot">
